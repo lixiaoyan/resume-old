@@ -12,6 +12,10 @@ body {
   color: #424242;
 }
 
+p {
+  margin: 0;
+}
+
 a {
   color: #1976d2;
 }
