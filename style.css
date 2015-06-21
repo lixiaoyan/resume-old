@@ -58,7 +58,7 @@ ul li {
 ul li:before {
   content: "";
   position: absolute;
-  top: 0.8em;
+  top: 0.7em;
   left: -1.2em;
   width: 4px;
   height: 4px;
