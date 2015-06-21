@@ -149,7 +149,7 @@ section .content {
   border-left: 1px solid #e0e0e0;
 }
 
-section .content :first-child {
+section .content > :first-child {
   margin-top: 0;
 }
 
