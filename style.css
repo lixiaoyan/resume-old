@@ -2,42 +2,75 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0 3.2em;
-  font-size: 13px;
-  font-family: "Source Code Pro", monospace;
-  font-weight: 300;
+html {
+  font-size: 14px;
+  font-family: "Ropa Sans", sans-serif;
   line-height: 1.4;
   word-wrap: break-word;
-  color: #424242;
 }
 
-p {
-  margin: 0;
-  margin-top: 0.4em;
+body {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #fafafa;
 }
 
-a {
+@media print {
+  body {
+    background-color: transparent;
+  }
+}
+
+a[href] {
   color: #1976d2;
 }
 
-abbr[title] {
-  border-bottom: 1px dotted #9e9e9e;
+@media screen {
+  a[href], abbr[title] {
+    text-decoration: none;
+    background-repeat: repeat-x;
+    background-position: 0 85%;
+    background-size: 1px 2px;
+  }
+
+  a[href] {
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(25, 118, 210, 0.4) 50%);
+  }
+
+  abbr[title] {
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.4) 50%);
+  }
+}
+
+@media screen and (min-resolution: 2dppx) {
+  a[href], abbr[title] {
+    background-size: 1px 1px;
+  }
+}
+
+@media print {
+  abbr[title] {
+    text-decoration: none;
+  }
 }
 
 h1, h2, h3 {
   font-weight: 400;
-  color: #000;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 h3 {
   margin: 0;
-  margin-top: 1.2em;
-  font-size: 1.2em;
+  margin-top: 1.6rem;
+  font-size: 1.5em;
 }
 
-h3 + p {
+p {
+  margin: 0;
   margin-top: 0.8em;
+}
+
+p + p {
+  margin-top: 0.2em;
 }
 
 ul, dl {
@@ -82,26 +115,35 @@ ul.inline li:before {
 }
 
 ul.inline li:not(:last-child):after {
-  content: " / ";
-  color: #9e9e9e;
+  content: " · ";
+  color: rgba(0, 0, 0, 0.3);
 }
 
 dl {
   overflow: hidden;
+  margin-top: 0.8em;
+  padding-left: 8em;
 }
 
 dl dt {
   float: left;
+  clear: left;
   width: 8em;
+  margin-left: -8em;
   margin-top: 0.2em;
-  font-weight: 400;
   color: #000;
 }
 
 dl dd {
-  overflow: hidden;
+  float: left;
+  width: 100%;
   margin-left: 0;
   margin-top: 0.2em;
+}
+
+dl dt:first-child,
+dl dt:first-child + dd {
+  margin-top: 0;
 }
 
 .page {
@@ -116,8 +158,12 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 3em;
-  font-weight: 300;
+}
+
+header h1 img {
+  display: inline-block;
+  height: 6rem;
+  vertical-align: middle;
 }
 
 header p {
@@ -127,26 +173,47 @@ header p {
 
 section {
   display: table;
+  table-layout: fixed;
   width: 100%;
   margin: 3.2em 0;
-  table-layout: fixed;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow:
+    0 0 1px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media print {
+  section {
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 section h2 {
   display: table-cell;
   width: 200px;
   margin: 0;
+  padding: 3.2rem 0;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+@media print {
+  section h2 {
+    padding: 1.2rem 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
+  }
 }
 
 section .content {
   position: relative;
   display: table-cell;
-  padding-left: 3.2em;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
-  border-left: 1px solid #e0e0e0;
+  padding: 3.2em;
 }
 
 section .content > :first-child {
@@ -154,39 +221,42 @@ section .content > :first-child {
 }
 
 footer {
-  margin: 6.4em 0;
+  margin: 3.2em 0;
   text-align: center;
 }
 
 footer p {
   margin: 0;
+  font-size: 13px;
   color: #9e9e9e;
 }
 
-@media (max-width: 800px) {
-  .page {
-    max-width: 400px;
+@media (max-width: 640px) {
+  header {
+    margin: 4.8em 0;
   }
 
   section {
     display: block;
+    margin: 2.4em 0;
+    border-radius: 0;
   }
 
   section h2 {
     display: block;
     width: auto;
-    margin: 0.4em 0;
+    padding: 2.4rem 0;
   }
 
   section .content {
     display: block;
-    margin: 0 -3.2em;
-    padding: 1.6em 3.2em;
-    border-left: none;
-    border-top: 1px solid #e0e0e0;
+    padding: 2.4em;
+  }
+
+  footer {
+    margin: 2.4em 0;
   }
 
   footer p {
-    font-size: 12px;
   }
 }

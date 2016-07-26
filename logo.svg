@@ -1,0 +1,12 @@
+<svg width="140" height="60" viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#000" stroke-width="2" stroke-linecap="square">
+    <path d="M 10,10 l 10,0 l 0,40 l -10,0" />
+    <path d="M 30,50 l 0,-20 l 15,0 l 0,20" />
+    <path d="M 55,20 l 0,30 l 10,0" />
+    <path d="M 55,30 l 10,0" />
+    <path d="M 75,50 l 0,-40 l 15,0 l 0,20 l -15,0" />
+    <path d="M 100,20 l 0,30 l 10,0" />
+    <path d="M 100,30 l 10,0" />
+    <path d="M 120,50 l 0,-20 l 10,0" />
+  </g>
+</svg>
