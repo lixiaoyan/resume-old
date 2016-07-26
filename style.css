@@ -1,4 +1,4 @@
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -88,7 +88,7 @@ ul li {
   margin-top: 0.2em;
 }
 
-ul li:before {
+ul li::before {
   content: "";
   position: absolute;
   top: 0.7em;
@@ -96,7 +96,7 @@ ul li:before {
   width: 4px;
   height: 4px;
   margin: -2px;
-  background-color: #9e9e9e;
+  border: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 ul.inline {
