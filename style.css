@@ -64,6 +64,39 @@ h3 {
   font-size: 1.5em;
 }
 
+hr {
+  position: relative;
+  box-sizing: border-box;
+  width: 4px;
+  height: 4px;
+  margin: 2.4em auto;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+hr::before,
+hr::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  margin: -2px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+hr::before {
+  right: 0.8em;
+}
+
+hr::after {
+  left: 0.8em;
+}
+
+.meta {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
 p {
   margin: 0;
   margin-top: 0.8em;
