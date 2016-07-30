@@ -20,6 +20,11 @@ body {
   }
 }
 
+strong {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 a[href] {
   color: #1976d2;
 }
