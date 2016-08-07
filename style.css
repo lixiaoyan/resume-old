@@ -260,6 +260,12 @@ footer {
   text-align: center;
 }
 
+@media print {
+  footer {
+    display: none;
+  }
+}
+
 footer p {
   margin: 0;
   font-size: 13px;
